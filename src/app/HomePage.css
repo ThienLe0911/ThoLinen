@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  transition: all .2s linear;
+  font-family: UI-SERIF;
+  font-size: 20px;
+}
+.link {
+  padding: 1rem;
+  font-size: 20px;
+}
+.product-card {
+  padding: 10px;
+  /*background: #f9f9f9;*/
+  text-align: center;
+  /*border: 1px solid #ddd;*/
+  border-radius: 10px;
+  .product-wrap{
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px
+  }
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-info {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.header {
+  li {
+    & a{
+      position: relative;
+    }
+    & a:after {
+      pointer-events: none;
+      background-color: black;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
+      width: calc(100%);
+    }
+    & a:hover:after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+  i:hover{
+    cursor: pointer;
+  }
+}
