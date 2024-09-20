@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  line-height: 1.15;
+  font-family:Arial, Helvetica, sans-serif!important;
+  a {
+    color: unset;
+  }
+}
+body {
+  h4 {
+    font-weight: 500;
+    width: fit-content;
+    font-size: 17px !important;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  h2 {
+    margin-top: 20px;
+    font-weight: 500;
+    width: fit-content;
+    font-size: clamp(1.5625rem, 1.4057rem + 0.6604vw, 2rem) !important;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    text-transform: uppercase;
+  }
+  .container_custom {
+    width: 80%;
+  }
+  a {
+    position: relative;
+    color: unset;
+  }
+  a:after {
+    pointer-events: none;
+    background-color: black;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: calc(100%);
+  }
+  a:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    padding: 15px 44px;
+    width: fit-content;
+    border-radius: 5px;
+  }
+  
+  .white_btn {
+    background-color: whitesmoke;
+    color: black;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+  
+  .black_btn {
+    background-color: black;
+    color: white;
+    a:hover:after {
+      transform: scaleX(1);
+      transform-origin: left;
+      background-color: white;
+    }
+  }
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
