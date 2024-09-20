@@ -5,50 +5,11 @@ import Image from "next/image";
 import Header from "./common/HeaderComponent/Header";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import Footer from "./common/Footer/Footer";
 import { useState, useEffect } from "react";
 import Banner from "../public/banner.jpg";
 
-const products = [
-  {
-    id: 1,
-    name: "Minh Thu",
-    price: "0",
-    img: "https://swag.vivathemes.com/wp-content/uploads/2023/10/purse-800x800.jpg",
-  },
-  {
-    id: 2,
-    name: "Minh Thu 2",
-    price: "0",
-    img: "https://swag.vivathemes.com/wp-content/uploads/2023/10/purse-800x800.jpg",
-  },
-  {
-    id: 3,
-    name: "Minh Thu 3",
-    price: "0",
-    img: "https://swag.vivathemes.com/wp-content/uploads/2023/10/purse-800x800.jpg",
-  },
-  {
-    id: 4,
-    name: "Minh Thu 4",
-    price: "0",
-    img: "https://swag.vivathemes.com/wp-content/uploads/2023/10/purse-800x800.jpg",
-  },
-  {
-    id: 5,
-    name: "Minh Thu 5",
-    price: "0",
-    img: "https://swag.vivathemes.com/wp-content/uploads/2023/10/purse-800x800.jpg",
-  },
-  {
-    id: 6,
-    name: "Minh Thu 6",
-    price: "0",
-    img: "https://swag.vivathemes.com/wp-content/uploads/2023/10/purse-800x800.jpg",
-  },
-];
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -66,7 +27,6 @@ const responsive = {
 };
 export default function HomePage() {
   const [products1, setProducts] = useState([]);
-  const [chunkedProducts, setChunkedProducts] = useState([]);
   const sheetId = "1pcaMM53EE60DBEvCGNyDUvHwUQt-UH3KXXLM_p-_zHk";
   const apiKey = "AIzaSyDx6z2_98O4-aGwdKUaxOoJFW7hqQXGoH8";
   //https://docs.google.com/spreadsheets/d/1pcaMM53EE60DBEvCGNyDUvHwUQt-UH3KXXLM_p-_zHk/edit?usp=sharing
@@ -93,13 +53,6 @@ export default function HomePage() {
         );
       });
   }, []);
-  useEffect(() => {
-    let a = [];
-    for (let i = 0; i < products1.length; i += 3) {
-      a.push(products1.slice(i, i + 3));
-    }
-    setChunkedProducts(a);
-  }, [products1]);
 
   return (
     <>
