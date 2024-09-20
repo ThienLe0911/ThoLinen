@@ -7,46 +7,46 @@ function Footer() {
       <div className="text-center border-[1px] py-20 flex flex-col items-center ">
         <div className="container_custom flex_center">
           <div className="flex justify-between w-full ">
-            <div className="flex flex-col basis-1/4 flex-grow items-start">
+            <div className="flex flex-col basis-1/4 flex-grow items-start text-start">
               <h2>SHOP</h2>
               <nav>
                 <ul className="text-[white]">
                   <li className="mt-5">
-                    <a href="/shop">Shop</a>
+                    <a href="/shop">ALL PRODUCTS</a>
                   </li>
                   <li className="mt-5">
-                    <a href="/shop">Shop</a>
+                    <a href="/shop">FOR MEN</a>
                   </li>
                   <li className="mt-5">
-                    <a href="/shop">Shop</a>
+                    <a href="/shop">FOR WOMEN</a>
                   </li>
                   <li className="mt-5">
-                    <a href="/shop">Shop</a>
+                    <a href="/shop">FASHION ADVICE</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div className="flex flex-col basis-1/4 flex-grow items-start text-start">
+              <h2>COMPANY</h2>
+              <nav>
+                <ul className="text-[white]">
+                  <li className="mt-5">
+                    <a href="/shop">HOME</a>
+                  </li>
+                  <li className="mt-5">
+                    <a href="/shop">ABOUT</a>
+                  </li>
+                  <li className="mt-5">
+                    <a href="/shop">BLOG</a>
+                  </li>
+                  <li className="mt-5">
+                    <a href="/shop">CONTACT</a>
                   </li>
                 </ul>
               </nav>
             </div>
             <div className="flex flex-col basis-1/4 flex-grow items-start">
-              <h2>SHOP</h2>
-              <nav>
-                <ul className="text-[white]">
-                  <li className="mt-5">
-                    <a href="/shop">Shop</a>
-                  </li>
-                  <li className="mt-5">
-                    <a href="/shop">Shop</a>
-                  </li>
-                  <li className="mt-5">
-                    <a href="/shop">Shop</a>
-                  </li>
-                  <li className="mt-5">
-                    <a href="/shop">Shop</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div className="flex flex-col basis-1/4 flex-grow items-start">
-              <h2>SHOP</h2>
+              <h2>ABOUT US</h2>
               <p className="mt-5 block text-left">
                 With a strong emphasis on creativity, quality, and
                 sustainability, Swag is committed to providing fashion-forward

@@ -8,7 +8,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 export default function Header() {
   return (
     <div>
-      <div className=" bg-white border-[1px] w-full fixed top-0 flex items-center justify-center header z-10">
+      <div className=" bg-white border-[1px] w-full fixed top-0 flex items-center justify-center header z-[1001]">
         <div className="container_custom flex_center" id="header">
           <div className="block__group">
             <div className="logo__container">
