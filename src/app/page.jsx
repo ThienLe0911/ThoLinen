@@ -141,12 +141,12 @@ export default function HomePage() {
             <h2 className="">Innovation Now</h2>
             <Carousel
               responsive={responsive}
-              autoPlay={true}
-              autoPlaySpeed={3000}
+              autoPlay={false}
+              autoPlaySpeed={10000}
               infinite={true}
             >
               {products1.map((item) => (
-                <div key={item.id} className="product-card mt-5 p-5">
+                <div key={item.id} className="product-card my-5">
                   <div className="product-wrap">
                     <img
                       className="w-full !h-[400px] object-cover"
@@ -161,7 +161,7 @@ export default function HomePage() {
                 </div>
               ))}
             </Carousel>
-            <button className="btn btn-primary black_btn flex_center mt-5">
+            <button className="btn btn-primary black_btn flex_center ">
               <a href="/shop">View all</a>
             </button>
           </div>
