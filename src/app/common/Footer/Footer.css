@@ -1,5 +1,16 @@
 .footer{
+  font-size: 18px;
+  color: white;
   a:after {
     background-color: white;
+    font-size: 18px;
+  }
+  .logo{
+    & a:hover{
+      opacity: .8;
+    }
+    & a::after{
+      width: 0;
+    }
   }
 }

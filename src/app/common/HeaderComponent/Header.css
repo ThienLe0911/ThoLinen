@@ -1,0 +1,5 @@
+.logo__container{
+  & a::after{
+    width: 0;
+  }
+}

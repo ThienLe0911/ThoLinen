@@ -4,6 +4,7 @@ import LogoBrand from "../../../public/LogoBrand.jpg";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import './Header.css'
 
 export default function Header() {
   return (
@@ -20,16 +21,16 @@ export default function Header() {
           <div className="block__group">
             <nav>
               <ul className="flex_center">
-                <li className="link">
+                <li className="link uppercase">
                   <Link href="/">Home</Link>
                 </li>
-                <li className="link">
+                <li className="link uppercase">
                   <Link href="/about">About</Link>
                 </li>
-                <li className="link">
+                <li className="link uppercase">
                   <Link href="/">Shop</Link>
                 </li>
-                <li className="link">
+                <li className="link uppercase">
                   <Link href="/">Contact</Link>
                 </li>
               </ul>
