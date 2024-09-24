@@ -64,13 +64,14 @@ function Footer() {
                 timeless.
               </p>
             </div>
-            <div className="flex flex_col basis-1/4 flex-grow"></div>
-          </div>
-          <div className="flex justify-between w-full ">
-            <div className="flex basis-1/4 logo">
+            <div className="flex flex_col basis-1/4 flex-grow justify-end logo">
               <Link href="/">
                 <Image className="object-cover" src={LogoBrand} alt="logo" width="300" height="300" />
               </Link>
+            </div>
+          </div>
+          <div className="flex justify-between w-full ">
+            <div className="flex basis-1/4 ">
             </div>
           </div>
           <div className="flex justify-between w-full mt-5">

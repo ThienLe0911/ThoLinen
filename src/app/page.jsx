@@ -33,21 +33,42 @@ export default function HomePage() {
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1?key=${apiKey}`;
 
   useEffect(() => {
-    fetch(url, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        let a = data.values.slice(1, data.values.length);
-        setProducts(
-          a.map((row, index) => ({
-            id: index,
-            name: row[0],
-            price: row[1],
-            img: row[2],
-          }))
-        );
+    const fetchData = async () => {
+      const response = await fetch(url,{
+        method: "GET",
+        headers: {
+        },
       });
+      const data = await response.json();
+      let a = data.values.slice(1, data.values.length);
+      setProducts(
+        a.map((row, index) => ({
+          id: index,
+          name: row[0],
+          price: row[1],
+          img: row[2],
+        }))
+      );
+    };
+    fetchData();
+    //fetch(url, {
+    //  method: "GET",
+    //  headers: {
+    //    "Content-Type": "application/json",
+    //  },
+    //})
+    //  .then((response) => response.json())
+    //  .then((data) => {
+    //    let a = data.values.slice(1, data.values.length);
+    //    setProducts(
+    //      a.map((row, index) => ({
+    //        id: index,
+    //        name: row[0],
+    //        price: row[1],
+    //        img: row[2],
+    //      }))
+    //    );
+    //  });
   }, []);
 
   return (
@@ -134,7 +155,7 @@ export default function HomePage() {
             <div className="basis-[33%] grow-0 py-5">
               <img
                 className="h-[600px] w-full object-contain"
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/438108279_418127164296928_7682725587209296259_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEm63XxF8P4wOmwRogW0lWHXCMxPgG7we5cIzE-AbvB7qBfjuhm5GesJ1Ix9WY_Mf48Tgs2zcWy4E4Fgzb3E3zA&_nc_ohc=a1eZWeycDrIQ7kNvgHC8sgX&_nc_ht=scontent.fsgn2-5.fna&oh=00_AYCG9focxkuVslfVMNv19afxsAO0Zq0HYk1fqF6ClSwkAw&oe=66F22677"
+                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/438108279_418127164296928_7682725587209296259_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEm63XxF8P4wOmwRogW0lWHXCMxPgG7we5cIzE-AbvB7qBfjuhm5GesJ1Ix9WY_Mf48Tgs2zcWy4E4Fgzb3E3zA&_nc_ohc=2SUit7B1B_wQ7kNvgFroiFD&_nc_ht=scontent.fsgn2-5.fna&_nc_gid=AXf8aHLGdOVT7aPXy4bInHY&oh=00_AYDZTTCsKo0AAZ8fo5wk_ZAowGkQoZ5oNnIpnDdhcr5h0g&oe=66F84D77"
                 alt=""
               />
             </div>
@@ -154,7 +175,7 @@ export default function HomePage() {
             <div className="basis-[33%] grow-0 py-5">
               <img
                 className="w-full h-[600px] object-contain"
-                src="https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/412618870_342998481809797_408582481796129765_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEawhpnJ2-iXONT1F3BQ0bwGPFoKnub1GEY8Wgqe5vUYU8TZycVOWVBVOE6vJNlmCzNM2gM3glGkKftcxVvcPIh&_nc_ohc=6Pdsl8DFLqIQ7kNvgENsxYM&_nc_ht=scontent.fsgn2-8.fna&oh=00_AYCDhrwZPHZaArQSsCsm6Sy4paxJTwcZ0baEAjLM7-Y-yg&oe=66F22CCD"
+                src="https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/412618870_342998481809797_408582481796129765_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEawhpnJ2-iXONT1F3BQ0bwGPFoKnub1GEY8Wgqe5vUYU8TZycVOWVBVOE6vJNlmCzNM2gM3glGkKftcxVvcPIh&_nc_ohc=w4zBVL7dhHcQ7kNvgFgZThr&_nc_ht=scontent.fsgn2-8.fna&_nc_gid=AKYqWCNa3BiCQZ3-q_1Uv3W&oh=00_AYAQExoeaiLREuGBMbGpMbl_2pQ-cXBEcbM0fKB3NMGxRg&oe=66F853CD"
                 alt=""
               />
             </div>
