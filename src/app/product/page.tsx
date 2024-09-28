@@ -1,43 +1,43 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Header from "../common/HeaderComponent/Header";
 import Footer from "../common/Footer/Footer";
 import './product.css'
 
 function Product() {
-  interface Option {
-    value: number;
-    label: string;
-  }
+  // interface Option {
+  //   value: number;
+  //   label: string;
+  // }
 
-  const sortOption: Array<Option> = [
-    {
-      label: "Default sorting",
-      value: 0,
-    },
-    {
-      label: "Sort by popularity",
-      value: 1,
-    },
-    {
-      label: "Sort by average rating",
-      value: 2,
-    },
-    {
-      label: "Sort by latest",
-      value: 3,
-    },
-    {
-      label: "Sort by price: low to high",
-      value: 4,
-    },
-    {
-      label: "Sort by price: high to low",
-      value: 5,
-    },
-  ];
-  const [sortSelect, setSortSelect] = useState(0);
-  const [products, setProducts] = useState([]);
+  // const sortOption: Array<Option> = [
+  //   {
+  //     label: "Default sorting",
+  //     value: 0,
+  //   },
+  //   {
+  //     label: "Sort by popularity",
+  //     value: 1,
+  //   },
+  //   {
+  //     label: "Sort by average rating",
+  //     value: 2,
+  //   },
+  //   {
+  //     label: "Sort by latest",
+  //     value: 3,
+  //   },
+  //   {
+  //     label: "Sort by price: low to high",
+  //     value: 4,
+  //   },
+  //   {
+  //     label: "Sort by price: high to low",
+  //     value: 5,
+  //   },
+  // ];
+  // const [sortSelect, setSortSelect] = useState(0);
+  // const [products, setProducts] = useState([]);
   return (
     <div className="product">
       <Header></Header>
