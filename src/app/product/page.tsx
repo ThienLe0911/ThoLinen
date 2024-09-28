@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Header from "../common/HeaderComponent/Header";
 import Footer from "../common/Footer/Footer";

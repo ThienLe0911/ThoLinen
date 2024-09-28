@@ -1,7 +1,6 @@
 import Footer from "../common/Footer/Footer";
 import Header from "../common/HeaderComponent/Header";
 import "./about.css";
-import  Image  from "next/image";
 
 const About = () => {
   return (
