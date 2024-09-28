@@ -7,7 +7,7 @@ const About = () => {
     <div className="about">
       <Header></Header>
       <div className="info flex justify-center py-20 mt-20">
-        <div className="container_custom">
+        <div className="container_custom-sm">
           <h4>Get to know us</h4>
           <h2>About our company</h2>
           <p className="uppermedium_text mt-5">
@@ -35,7 +35,7 @@ const About = () => {
         ></video>
       </div>
       <div className="story flex justify-center py-20 border-[1px]">
-        <div className="container_custom">
+        <div className="container_custom-sm">
           <h2>Our Story</h2>
           <p className="uppermedium_text mt-5">
             Founded in 2002, SWAG is the brainchild of a group of fashion
@@ -53,7 +53,7 @@ const About = () => {
         </div>
       </div>
       <div className="Philosophy flex justify-center py-20">
-        <div className="container_custom">
+        <div className="container_custom-sm">
           <h2>Our Philosophy</h2>
           <p className="uppermedium_text mt-5">
             At SWAG, we believe that fashion is not just about what you wear,
@@ -62,9 +62,9 @@ const About = () => {
             philosophy is grounded in the following principles:
           </p>
           <div className="philosophy_wrapper mt-5 flex">
-            <div className="philosophy_left basis-1/2 ">
+            <div className="philosophy_left basis-1/2 flex flex-col justify-center">
               <img
-                className="w-full object-fill philosoply_image"
+                className="w-full object-fill philosoply_image min-h-[400px]"
                 src="https://swag.vivathemes.com/wp-content/uploads/2023/10/shirt-819x1024.jpg"
                 alt="banner"
               ></img>

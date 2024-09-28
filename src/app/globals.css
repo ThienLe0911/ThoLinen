@@ -39,6 +39,9 @@ body {
   .container_custom {
     width: 80%;
   }
+  .container_custom-sm {
+    width: 60%;
+  }
   a {
     position: relative;
     color: unset;
