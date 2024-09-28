@@ -6,3 +6,10 @@
         
     }
 }
+
+        
+.sorting{
+    &:hover{
+        cursor: pointer;
+    }
+}
