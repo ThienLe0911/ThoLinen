@@ -19,16 +19,16 @@ function Footer() {
               <nav>
                 <ul className="text-[white]">
                   <li className="mt-5">
-                    <a href="/shop">All products</a>
+                    <a className="medium_text" href="/shop">All products</a>
                   </li>
-                  <li className="mt-5">
-                    <a href="/shop">For men</a>
+                  <li className="">
+                    <a className="medium_text" href="/shop">For men</a>
                   </li>
-                  <li className="mt-5">
-                    <a href="/shop">For women</a>
+                  <li className="">
+                    <a className="medium_text" href="/shop">For women</a>
                   </li>
-                  <li className="mt-5">
-                    <a href="/shop">Fashion Advice</a>
+                  <li className="">
+                    <a className="medium_text" href="/shop">Fashion Advice</a>
                   </li>
                 </ul>
               </nav>
@@ -37,36 +37,36 @@ function Footer() {
               <h3>COMPANY</h3>
               <nav>
                 <ul className="text-[white]">
-                  <li className="mt-5">
-                    <a href="/shop">Home</a>
+                  <li className="">
+                    <a className="medium_text" href="/shop">Home</a>
                   </li>
-                  <li className="mt-5">
-                    <a href="/shop">About</a>
+                  <li className="">
+                    <a className="medium_text" href="/shop">About</a>
                   </li>
-                  <li className="mt-5">
-                    <a href="/shop">Blog</a>
+                  <li className="">
+                    <a className="medium_text" href="/shop">Blog</a>
                   </li>
-                  <li className="mt-5">
-                    <a href="/shop">Contact</a>
+                  <li className="">
+                    <a className="medium_text" href="/shop">Contact</a>
                   </li>
                 </ul>
               </nav>
             </div>
             <div className="flex flex-col basis-1/4 flex-grow items-start">
               <h3>ABOUT US</h3>
-              <p className="mt-5 block text-left">
+              <p className="mt-5 block text-left medium_text">
                 With a strong emphasis on creativity, quality, and
                 sustainability, Swag is committed to providing fashion-forward
                 individuals with unique and stylish clothing options.
               </p>
-              <p className="mt-5 block text-left">
+              <p className="mt-5 block text-left medium_text">
                 Latest trends to create garments that are both contemporary and
                 timeless.
               </p>
             </div>
             <div className="flex flex_col basis-1/4 flex-grow justify-end logo">
               <Link href="/">
-                <Image className="object-cover" src={LogoBrand} alt="logo" width="300" height="300" />
+                <Image className="object-cover" src={LogoBrand} alt="logo" width="200" height="200" />
               </Link>
             </div>
           </div>

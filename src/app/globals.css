@@ -3,19 +3,30 @@
 @tailwind utilities;
 
 * {
-  line-height: 1.15;
+  line-height: 1.8;
   font-family: "Comfortaa", sans-serif!important;
   /*font-family: 'Dancing Script', cursive!important;*/
   a {
     color: unset;
   }
 }
+.uppermedium_text{
+  font-size: 22px;
+}
+.medium_text{
+  font-size: 17px;
+}
+.small_text{
+  font-size: 15px;
+}
+
 body {
   h4 {
     font-weight: 500;
     width: fit-content;
     font-size: 17px !important;
     font-family: 'Dancing Script', cursive!important;
+    font-style: italic;
   }
   h2 {
     margin-top: 20px;

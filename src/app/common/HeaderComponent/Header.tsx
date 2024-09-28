@@ -28,7 +28,7 @@ export default function Header() {
                   <Link href="/about">About</Link>
                 </li>
                 <li className="link uppercase">
-                  <Link href="/">Shop</Link>
+                  <Link href="/product">Shop</Link>
                 </li>
                 <li className="link uppercase">
                   <Link href="/">Contact</Link>
