@@ -34,8 +34,8 @@ function Product() {
       value: 5,
     },
   ];
-  const [sortSelect, setSortSelect] = useState(0);
-  const [products, setProducts] = useState([]);
+  //const [sortSelect, setSortSelect] = useState(0);
+  //const [products, setProducts] = useState([]);
   return (
     <div className="product">
       <Header></Header>
@@ -43,14 +43,14 @@ function Product() {
         <div className="product__title flex justify-between">
           <h1>SHOP</h1>
           <div className="sorting p-5 flex justify-between">
-            <span>
+            {/*<span>
               {
                 sortOption.find(
                   (item: Option) =>
                     item.value == sortSelect
                 )?.label
               }
-            </span>
+            </span>*/}
 
             {/*{sortOption.map((item, index) => (
               <span
