@@ -34,7 +34,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(url,{
+      const response = await fetch(url, {
         method: "GET",
         headers: {
         },
@@ -89,7 +89,7 @@ export default function HomePage() {
           <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex-col flex_center">
             <h1 className="text-3xl font-bold text-white">Thở Linen</h1>
             <button className="btn btn-primary white_btn flex_center mt-2">
-              <a href="/shop">Visit shop</a>
+              <a href="/shop">Visit</a>
             </button>
           </div>
         </div>
