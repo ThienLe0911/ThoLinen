@@ -72,7 +72,7 @@ function Contact() {
                   <div className="flex flex-col mt-5">
                     <label
                       htmlFor="message"
-                      className="text-[#999999] font-bold uppercase"
+                      className=""
                     >
                       Message
                     </label>
