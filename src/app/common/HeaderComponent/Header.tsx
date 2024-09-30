@@ -31,19 +31,19 @@ export default function Header() {
                   <Link href="/product">Shop</Link>
                 </li>
                 <li className="link uppercase">
-                  <Link href="/">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </nav>
           </div>
           <div className="flex_center">
-            <i className="w-5 h-5 m-5">
+            <i className="w-5 h-5 ml-2">
               <FontAwesomeIcon icon={faEnvelope} />
             </i>
-            <i className="w-5 h-5 m-5">
+            <i className="w-5 h-5 ml-2">
               <FontAwesomeIcon icon={faEnvelope} />
             </i>
-            <i className="w-5 h-5 m-5">
+            <i className="w-5 h-5 ml-2">
               <FontAwesomeIcon icon={faEnvelope} />
             </i>
           </div>
