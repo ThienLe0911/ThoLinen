@@ -1,46 +1,53 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../common/HeaderComponent/Header";
 import Footer from "../common/Footer/Footer";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './product.css'
+import { getAllProductWithSort } from "../service/productAPI";
 
 function Product() {
-  // interface Option {
-  //   value: number;
-  //   label: string;
-  // }
+  type Option = {
+    value: number;
+    label: string;
+  }
 
-  // const sortOption: Array<Option> = [
-  //   {
-  //     label: "Default sorting",
-  //     value: 0,
-  //   },
-  //   {
-  //     label: "Sort by popularity",
-  //     value: 1,
-  //   },
-  //   {
-  //     label: "Sort by average rating",
-  //     value: 2,
-  //   },
-  //   {
-  //     label: "Sort by latest",
-  //     value: 3,
-  //   },
-  //   {
-  //     label: "Sort by price: low to high",
-  //     value: 4,
-  //   },
-  //   {
-  //     label: "Sort by price: high to low",
-  //     value: 5,
-  //   },
-  // ];
+  const sortOption: Array<Option> = [
+    {
+      label: "Default sorting",
+      value: 0,
+    },
+    {
+      label: "Sort by popularity",
+      value: 1,
+    },
+    {
+      label: "Sort by average rating",
+      value: 2,
+    },
+    {
+      label: "Sort by latest",
+      value: 3,
+    },
+    {
+      label: "Sort by price: low to high",
+      value: 4,
+    },
+    {
+      label: "Sort by price: high to low",
+      value: 5,
+    },
+  ];
   const [sortSelect, setSortSelect] = useState(0);
   const [showSort, setShowSort] = useState(false);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getAllProductWithSort(showSort, sortSelect);
+    }
+  })
   // const [products, setProducts] = useState([]);
   return (
     <div className="product">
@@ -64,24 +71,15 @@ function Product() {
 
             <div className={(!showSort && 'hidden') + " absolute top-full w-full bg-[#f7f7f7] left-0 z-10"}>
               <ul className="flex flex-col w-full">
-                <li onClick={() => setSortSelect(0)} className={(sortSelect == 0 ? 'bg-[#a7a6a6]' : '') + " w-full p-2"}>
-                  <span>Default sorting</span>
-                </li>
-                <li onClick={() => setSortSelect(1)} className={(sortSelect == 1 ? 'bg-[#a7a6a6]' : '') + " w-full p-2"}>
-                  <span>Sort by popularity</span>
-                </li>
-                <li onClick={() => setSortSelect(2)} className={(sortSelect == 2 ? 'bg-[#a7a6a6]' : '') + " w-full p-2"}>
-                  <span>Sort by average rating</span>
-                </li>
-                <li onClick={() => setSortSelect(3)} className={(sortSelect == 3 ? 'bg-[#a7a6a6]' : '') + " w-full p-2"}>
-                  <span>Sort by latest</span>
-                </li>
-                <li onClick={() => setSortSelect(4)} className={(sortSelect == 4 ? 'bg-[#a7a6a6]' : '') + " w-full p-2"}>
-                  <span>Sort by price: low to high</span>
-                </li>
-                <li onClick={() => setSortSelect(5)} className={(sortSelect == 5 ? 'bg-[#a7a6a6]' : '') + " w-full p-2"}>
-                  <span>Sort by price: high to low</span>
-                </li>
+                {
+                  sortOption.map((item,index) => {
+                    return <>
+                      <li key={item.value} onClick={() => setSortSelect(index)} className={(sortSelect == index ? 'bg-[#a7a6a6]' : '') + " w-full p-2"}>
+                        <span>{item.label}</span>
+                      </li>
+                    </>
+                  })
+                }
               </ul>
             </div>
           </div>

@@ -8,6 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 import Footer from "./common/Footer/Footer";
 import { useState, useEffect } from "react";
 import Banner from "../public/banner.jpg";
+import { getAllProduct } from "./service/productAPI";
 
 
 const responsive = {
@@ -27,19 +28,11 @@ const responsive = {
 };
 export default function HomePage() {
   const [products1, setProducts] = useState([]);
-  const sheetId = "1pcaMM53EE60DBEvCGNyDUvHwUQt-UH3KXXLM_p-_zHk";
-  const apiKey = "AIzaSyDx6z2_98O4-aGwdKUaxOoJFW7hqQXGoH8";
-  //https://docs.google.com/spreadsheets/d/1pcaMM53EE60DBEvCGNyDUvHwUQt-UH3KXXLM_p-_zHk/edit?usp=sharing
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1?key=${apiKey}`;
 
   useEffect(() => {
+    let data={};
     const fetchData = async () => {
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-        },
-      });
-      const data = await response.json();
+      data = await getAllProduct();
       let a = data.values.slice(1, data.values.length);
       setProducts(
         a.map((row, index) => ({
@@ -51,30 +44,12 @@ export default function HomePage() {
       );
     };
     fetchData();
-    //fetch(url, {
-    //  method: "GET",
-    //  headers: {
-    //    "Content-Type": "application/json",
-    //  },
-    //})
-    //  .then((response) => response.json())
-    //  .then((data) => {
-    //    let a = data.values.slice(1, data.values.length);
-    //    setProducts(
-    //      a.map((row, index) => ({
-    //        id: index,
-    //        name: row[0],
-    //        price: row[1],
-    //        img: row[2],
-    //      }))
-    //    );
-    //  });
   }, []);
 
   return (
     <>
       <div>
-        <Header></Header>
+        {/* <Header></Header> */}
         <div className="w-full relative h-[100vh]">
           <video
             className=""
@@ -231,7 +206,7 @@ export default function HomePage() {
 
           </div>
         </div>*/}
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </div>
     </>
   );
