@@ -22,6 +22,8 @@ import { Button } from '@material-tailwind/react'
 import Slider from 'react-slick'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useRouter } from 'next/navigation';
+
 
 function MyUHomepage() {
 
@@ -52,13 +54,6 @@ function MyUHomepage() {
     };
     return (
         <div id='wrapper' className=' mx-auto'>
-            <div className=' flex justify-between mx-auto px-4 sm:px-4 md:px-2 lg:px-0 xl:px-0 py-3 max-sm:flex-col sm:w-[80%]'>
-                <span className='text-xs text-[#666666]'>642 Âu Cơ, Phường 10, Quận Tân Bình, Thành phố Hồ Chí Minh, Việt Nam</span>
-                <div className='flex items-center max-md:items-start max-md:gap-0 gap-5 md:flex-row flex-col'>
-                    <a className='text-xs text-[#666666]' href='/dangnhap'>Đăng nhập</a>
-                    <a className='text-xs text-[#666666]' href='/dangky'>Đăng ký</a>
-                </div>
-            </div>
             <Header></Header>
             <div id='banner' className='sm:w-[80%] justify-between mx-auto px-4 sm:px-4 md:px-2 lg:px-0 xl:px-0 py-3 flex max-lg:flex-col items-stretch gap-2'>
                 <div className='flex basis-1/2 flex-grow'>
@@ -78,7 +73,7 @@ function MyUHomepage() {
                         {
                             [1, 2, 3, 4, 5].map((item, index) => {
                                 return <>
-                                    <div className='flex basis-[calc(20%-4px)] grow-0 max-lg:basis-[30%] mb-4 flex-col items-center bg-[#FF6132] rounded-md p-2 py-4 text-white gap-2 hover:opacity-90 hover:cursor-pointer '>
+                                    <div key={index} className='flex basis-[calc(20%-4px)] grow-0 max-lg:basis-[30%] mb-4 flex-col items-center bg-[#FF6132] rounded-md p-2 py-4 text-white gap-2 hover:opacity-90 hover:cursor-pointer '>
                                         <div className='w-[100%] flex justify-between'>
                                             <span className='bg-gradient-to-r from-[#A0A1A8CC] to-[#3F3F42CC] px-4 py-1 text-white rounded-[20px] text-sm'>3 khóa</span>
                                             <span className='bg-[white] px-4 py-1 rounded-[20px] text-sm text-[#FFD130]'>
@@ -118,7 +113,7 @@ function MyUHomepage() {
                     >
                         {[1, 2, 3, 4, 5].map((item, index) => (
                             <>
-                                <div className='flex basis-1/4 flex-col items-start mb-5 w-full px-2 hover:shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] hover:cursor-pointer'>
+                                <div key={index} className='flex basis-1/4 flex-col items-start mb-5 w-full px-2 hover:shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] hover:cursor-pointer'>
                                     <Image src={ielts} alt="" className='object-cover flex-grow w-[100%] h-[150px]'></Image>
                                     <span className='text-[14px] font-semibold mt-2 text-[#0678BD]'>CHỨNG CHỈ TOEIC</span>
                                     <div className='h-[auto] flex gap-1 items-center'>
@@ -222,9 +217,13 @@ function MyUHomepage() {
     )
 }
 
-const Item = ({ url, title, style }) => {
+export const Item = ({ url, title, style }) => {
+    const router = useRouter();
+    const navigateToPage = () => {
+        router.push('/khoahoc/1');
+      };
     return (
-        <div className={style}>
+        <div className={style} onClick={navigateToPage}>
             <Image src={url} alt="" className='object-cover flex-grow w-[100%] h-[200px]'></Image>
             <span className='text-[14px] font-semibold mt-2 text-[#0678BD]'>{title}</span>
             <span className='text-[14px] text-start'>Hiện nay có rất nhiều các cuộc thi đánh giá khả năng sử dụng tiếng Anh khác nhau trên thế giới nói chung và tại Việt Nam nói riêng.</span>
@@ -240,56 +239,65 @@ const Item = ({ url, title, style }) => {
     )
 }
 
-const Header = () => {
+export const Header = () => {
     const [show, setShow] = useState(false);
     const [giatriVienDoanhTri, setGiatriVienDoanhTri] = useState('Viện doanh trí');
     const [searchValue, setSearchValue] = useState('');
     return (
-        <div className='sm:w-[80%] flex max-lg:flex-wrap mx-auto px-4 sm:px-4 md:px-2 lg:px-0 xl:px-0 py-3 gap-5 max-lg:gap-5 items-stretch justify-between max-lg:justify-start'>
-            <div className=' h-[auto] w-fit'>
-                <Image src={Logo} alt="" className='object-cover w-[100px] h-[50px]'></Image>
+        <>
+            <div className=' flex justify-between mx-auto xl:px-0 py-3 max-sm:flex-col w-[80%]'>
+                <span className='text-xs text-[#666666]'>642 Âu Cơ, Phường 10, Quận Tân Bình, Thành phố Hồ Chí Minh, Việt Nam</span>
+                <div className='flex items-center max-md:items-start max-md:gap-0 gap-5 md:flex-row flex-col'>
+                    <a className='text-xs text-[#666666]' href='/dangnhap'>Đăng nhập</a>
+                    <a className='text-xs text-[#666666]' href='/dangky'>Đăng ký</a>
+                </div>
             </div>
+            <div className='w-[80%] flex max-lg:flex-wrap mx-auto lg:px-0 xl:px-0 py-3 gap-5 max-lg:gap-5 items-stretch justify-between max-lg:justify-start'>
+                <div className=' h-[auto] w-fit'>
+                    <Image src={Logo} alt="" className='object-cover w-[100px] h-[50px]'></Image>
+                </div>
 
-            <div className='w-[20%] max-md:w-[30%] relative'>
-                <button className='border border-[#e0e0e0] text-[#666666] w-[100%]  flex items-center justify-between px-4 rounded-md h-[100%]' onClick={() => { setShow(!show) }}>
-                    <span className='text-[#666666] text-sm'>{giatriVienDoanhTri}</span>
-                    <FontAwesomeIcon icon={show ? faArrowUp : faArrowDown} className='w-[20px]'></FontAwesomeIcon>
+                <div className='w-[20%] max-md:w-[30%] relative'>
+                    <button className='border border-[#e0e0e0] text-[#666666] w-[100%]  flex items-center justify-between px-4 rounded-md h-[100%]' onClick={() => { setShow(!show) }}>
+                        <span className='text-[#666666] text-sm'>{giatriVienDoanhTri}</span>
+                        <FontAwesomeIcon icon={show ? faArrowUp : faArrowDown} className='w-[20px]'></FontAwesomeIcon>
+                    </button>
+                    <div className={'w-[100%] absolute z-10' + (show ? ' block' : ' hidden')} >
+                        <ul className='z-10 w-[100%] bg-white'>
+                            <li className='hover:bg-[#0678BD] hover:cursor-pointer hover:text-white border border-[#e0e0e0] text-[#666666] w-[100%] h-[40px] flex items-center justify-between px-4 ' onClick={() => { setGiatriVienDoanhTri('Viện doanh trí') }}>
+                                <span>Viện doanh trí</span>
+                            </li>
+                            <li className='hover:bg-[#0678BD] hover:cursor-pointer hover:text-white border border-[#e0e0e0] text-[#666666] w-[100%] h-[40px] flex items-center justify-between px-4' onClick={() => { setGiatriVienDoanhTri('TT Ngoại ngữ') }}>
+                                <span>TT Ngoại ngữ</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className='w-[30%] relative flex items-center justify-between border border-[#e0e0e0] rounded-md hover:cursor-pointer'>
+                    <div className='flex items-center w-[70%] h-[100%]'>
+                        <FontAwesomeIcon icon={faSearch} className='w-[20px] mx-2'></FontAwesomeIcon>
+                        <input value={searchValue} type="text" className='h-[100%] outline-none text-sm w-[100%]' placeholder='Nhập tìm kiếm' onChange={(e) => { setSearchValue(e.target.value) }}></input>
+                    </div>
+                    <button className='text-sm  hover:opacity-90 w-[30%] h-[100%] px-2 bg-[#0678BD] rounded-md rounded-l-none text-white flex items-center justify-center border border-[#0678BD]'>Tìm kiếm</button>
+                </div>
+                <button className='text-sm px-2 hover:opacity-90 rounded-md text-white flex items-center justify-center border border-[#0678BD] bg-[#0678BD] lg:flex-grow'>Trang chủ</button>
+                <button className='flex items-center justify-between px-2 hover:opacity-90 w-[auto] rounded-md text-white border border-[#0678BD] bg-[#0678BD]'>
+                    <FontAwesomeIcon icon={faUser} className='w-[20px]'></FontAwesomeIcon>
+                    <div className='flex flex-col '>
+                        <span className='text-[10px]'>Chào em</span>
+                        <span className='text-[10px]'>Lê Hoàng Thiện</span>
+                    </div>
                 </button>
-                <div className={'w-[100%] absolute' + (show ? ' block' : ' hidden')} >
-                    <ul>
-                        <li className='hover:bg-[#0678BD] hover:cursor-pointer hover:text-white border border-[#e0e0e0] text-[#666666] w-[100%] h-[40px] flex items-center justify-between px-4 ' onClick={() => { setGiatriVienDoanhTri('Viện doanh trí') }}>
-                            <span>Viện doanh trí</span>
-                        </li>
-                        <li className='hover:bg-[#0678BD] hover:cursor-pointer hover:text-white border border-[#e0e0e0] text-[#666666] w-[100%] h-[40px] flex items-center justify-between px-4' onClick={() => { setGiatriVienDoanhTri('TT Ngoại ngữ') }}>
-                            <span>TT Ngoại ngữ</span>
-                        </li>
-                    </ul>
-                </div>
+                <button className='px-2 hover:opacity-90 h-[auto] rounded-md text-white flex items-center justify-center border border-[#0678BD] bg-[#0678BD]'>
+                    <FontAwesomeIcon icon={faShoppingCart} className='w-[20px]'></FontAwesomeIcon>
+                </button>
             </div>
-
-            <div className='w-[30%] relative flex items-center justify-between border border-[#e0e0e0] rounded-md hover:cursor-pointer'>
-                <div className='flex items-center w-[70%] h-[100%]'>
-                    <FontAwesomeIcon icon={faSearch} className='w-[20px] mx-2'></FontAwesomeIcon>
-                    <input value={searchValue} type="text" className='h-[100%] outline-none text-sm w-[100%]' placeholder='Nhập tìm kiếm' onChange={(e) => { setSearchValue(e.target.value) }}></input>
-                </div>
-                <button className='text-sm  hover:opacity-90 w-[30%] h-[100%] px-2 bg-[#0678BD] rounded-md rounded-l-none text-white flex items-center justify-center border border-[#0678BD]'>Tìm kiếm</button>
-            </div>
-            <button className='text-sm px-2 hover:opacity-90 rounded-md text-white flex items-center justify-center border border-[#0678BD] bg-[#0678BD] lg:flex-grow'>Trang chủ</button>
-            <button className='flex items-center justify-between px-2 hover:opacity-90 w-[auto] rounded-md text-white border border-[#0678BD] bg-[#0678BD]'>
-                <FontAwesomeIcon icon={faUser} className='w-[20px]'></FontAwesomeIcon>
-                <div className='flex flex-col '>
-                    <span className='text-[10px]'>Chào em</span>
-                    <span className='text-[10px]'>Lê Hoàng Thiện</span>
-                </div>
-            </button>
-            <button className='px-2 hover:opacity-90 h-[auto] rounded-md text-white flex items-center justify-center border border-[#0678BD] bg-[#0678BD]'>
-                <FontAwesomeIcon icon={faShoppingCart} className='w-[20px]'></FontAwesomeIcon>
-            </button>
-        </div>
+        </>
     )
 }
 
-const Footer = () => {
+export const Footer = () => {
     return (
         <div className='pt-5 w-full'>
             <div className=' bg-[#EEF3FF] w-full py-5 flex items-center justify-center'>
@@ -369,5 +377,7 @@ const Footer = () => {
         </div>
     )
 }
+
+
 
 export default MyUHomepage
